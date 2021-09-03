@@ -25,6 +25,6 @@
 		"jest": true
 	},
 	"ignorePatterns": [
-		"built/"
+		"build/"
 	]
 }
