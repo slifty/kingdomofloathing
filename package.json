@@ -8,9 +8,8 @@
   "scripts": {
     "clean": "rimraf build",
     "watch": "nodemon --watch src --ext 'ts' -x 'yarn build'",
-    "build": "yarn clean && yarn build:types && yarn build:transpile",
-    "build:transpile": "yarn run babel --extensions \".ts,.tsx\" src -d built",
-    "build:types": "yarn run tsc --project tsconfig.build.json --rootDir src --outDir built",
+    "build": "yarn clean && yarn build:pack",
+    "build:pack": "webpack",
     "lint": "yarn lint:formatting && yarn lint:types",
     "lint:types": "tsc",
     "lint:formatting": "eslint . --ext .ts,.tsx"
@@ -25,14 +24,18 @@
     "@babel/preset-env": "^7.15.4",
     "@babel/preset-typescript": "^7.15.0",
     "@tsconfig/node16": "^1.0.2",
+    "@types/node": "^16.7.10",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
+    "babel-loader": "^8.2.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-airbnb-typescript": "^14.0.0",
     "eslint-plugin-import": "^2.24.2",
     "nodemon": "^2.0.12",
     "rimraf": "^3.0.2",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.2",
+    "webpack": "^5.51.2",
+    "webpack-cli": "^4.8.0"
   }
 }
