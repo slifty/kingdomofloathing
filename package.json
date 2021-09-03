@@ -6,7 +6,7 @@
   "author": "Dan Schultz <slifty@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf built",
+    "clean": "rimraf build",
     "watch": "nodemon --watch src --ext 'ts' -x 'yarn build'",
     "build": "yarn clean && yarn build:types && yarn build:transpile",
     "build:transpile": "yarn run babel --extensions \".ts,.tsx\" src -d built",
