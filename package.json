@@ -1,0 +1,38 @@
+{
+  "name": "kingdomofloathing",
+  "version": "0.0.1",
+  "description": "A suite of automation tools for KoL",
+  "repository": "git@github.com:slifty/kingdomofloathing.git",
+  "author": "Dan Schultz <slifty@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf built",
+    "watch": "nodemon --watch src --ext 'ts' -x 'yarn build'",
+    "build": "yarn clean && yarn build:types && yarn build:transpile",
+    "build:transpile": "yarn run babel --extensions \".ts,.tsx\" src -d built",
+    "build:types": "yarn run tsc --project tsconfig.build.json --rootDir src --outDir built",
+    "lint": "yarn lint:formatting && yarn lint:types",
+    "lint:types": "tsc",
+    "lint:formatting": "eslint . --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "kolmafia": "^1.2.1",
+    "libram": "^0.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.4",
+    "@babel/preset-typescript": "^7.15.0",
+    "@tsconfig/node16": "^1.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.0",
+    "eslint-plugin-import": "^2.24.2",
+    "nodemon": "^2.0.12",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.2"
+  }
+}
