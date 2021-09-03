@@ -1,10 +1,13 @@
 import { console } from 'libram'
-import { init } from './scripts/init'
+import { initialize } from './scripts'
+import { parseArgString } from './utils'
 
 export function main(argString = ''): void {
-	switch (argString) {
-		case 'init':
-			init()
+	const args = parseArgString(argString)
+	const command = args[0] || ''
+	switch (command) {
+		case 'initialize':
+			initialize()
 			break
 
 		default:
