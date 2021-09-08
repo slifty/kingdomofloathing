@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf build",
-    "watch": "nodemon --watch src --ext 'ts' -x 'yarn build'",
+    "watch": "nodemon --watch src --ext 'ts' -x 'yarn lint && yarn build'",
     "build": "yarn clean && yarn build:pack",
     "build:pack": "webpack",
     "lint": "yarn lint:formatting && yarn lint:types",
