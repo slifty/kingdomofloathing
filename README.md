@@ -25,12 +25,13 @@ or you can manually build by typing:
 $> yarn build
 ```
 
-## Useful commands
+## Useful resources
 
 These are commands that can be typed into the Mafia CLI for various exciting effects:
 
 * `prefref` shows a list of preferences that can be set
 * `jsref` shows a list of javascript commands
+* Although we're using typescript, it can still be handy to know [the list of ASH functions](https://wiki.kolmafia.us/index.php?title=Ash_Functions)
 
 ## Installing the scripts
 

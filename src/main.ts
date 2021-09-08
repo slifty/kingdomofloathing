@@ -1,16 +1,24 @@
 import { console } from 'libram'
-import { initialize } from './scripts'
-import { parseArgString } from './utils'
+import {
+	initialize,
+	pvp,
+} from './scripts'
+import { parseArgumentString } from './utils'
 
-export function main(argString = ''): void {
-	const args = parseArgString(argString)
-	const command = args[0] || ''
-	switch (command) {
+export function main(mafiaArgumentString = ''): void {
+	const mafiaArguments = parseArgumentString(mafiaArgumentString)
+	const command = mafiaArguments[0] || ''
+	const commandArguments = mafiaArguments.slice(1)
+	switch (command.toLowerCase()) {
 		case 'initialize':
-			initialize()
+			initialize(commandArguments)
+			break
+
+		case 'pvp':
+			pvp(commandArguments)
 			break
 
 		default:
-			console.log('On the one hand it works, but on the other hand it does absolutely nothing...')
+			console.log(`On the one hand it works, but on the other hand it does absolutely nothing... (${command})`)
 	}
 }

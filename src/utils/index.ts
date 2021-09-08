@@ -1,3 +1,3 @@
-export function parseArgString(argString: string): string[] {
-	return argString.split(' ')
+export function parseArgumentString(argumentString: string): string[] {
+	return argumentString.split(' ')
 }
